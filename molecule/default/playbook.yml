@@ -1,0 +1,10 @@
+- hosts: all
+  roles:
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+      htpasswd_list:
+        - path: /etc/htpasswd
+          users:
+            - name: "krzysztof"
+              password: "krzysztof123"
+            - name: "anna"
+              password: "anna123"

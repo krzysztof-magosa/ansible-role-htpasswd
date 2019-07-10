@@ -1,0 +1,4 @@
+- name: Install required module dependency
+  package:
+    name: python-passlib
+    state: present

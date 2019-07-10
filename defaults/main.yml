@@ -1,0 +1,21 @@
+htpasswd_list: []
+#   - attributes: ""
+#     create: true
+#     crypt_scheme: apr_md5_crypt
+#     group: root
+#     mode: "0644"
+#     owner: root
+#     path: /etc/htpasswd
+#     unsafe_writes: false
+#     users:
+#       - name: "john"
+#         password: "hello"
+#         state: present
+
+htpasswd_default_attributes: "{{ omit }}"
+htpasswd_default_create: "{{ omit }}"
+htpasswd_default_crypt_scheme: "{{ omit }}"
+htpasswd_default_group: "{{ omit }}"
+htpasswd_default_mode: "{{ omit }}"
+htpasswd_default_owner: "{{ omit }}"
+htpasswd_default_unsafe_writes: "{{ omit }}"

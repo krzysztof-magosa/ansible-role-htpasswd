@@ -1,0 +1,16 @@
+- name: Generate htpasswd
+  htpasswd:
+    attributes: "{{ item.0.attributes | default(htpasswd_default_attributes) }}"
+    create: "{{ item.0.create | default(htpasswd_default_create) }}"
+    crypt_scheme: "{{ item.0.crypt_scheme | default(htpasswd_default_crypt_scheme) }}"
+    group: "{{ item.0.group | default(htpasswd_default_group) }}"
+    mode: "{{ item.0.mode | default(htpasswd_default_mode) }}"
+    name: "{{ item.1.name }}"
+    owner: "{{ item.0.owner | default(htpasswd_default_owner) }}"
+    password: "{{ item.1.password }}"
+    path: "{{ item.0.path | default(htpasswd_default_path) }}"
+    state: "{{ item.1.state | default(omit) }}"
+    unsafe_writes: "{{ item.0.unsafe_writes | default(htpasswd_default_unsafe_writes) }}"
+  with_subelements:
+    - "{{ htpasswd_list }}"
+    - users
